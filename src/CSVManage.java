@@ -5,12 +5,7 @@ import java.util.Scanner;
 public class CSVManage {
 
     //Funcion para escribir en un archivo CSV, recibe un nombre de archivo y dos numeros enteros que seran almacenados
-    void writeCSV(String file){
-        Scanner dato = new Scanner(System.in);
-        String equipo1;
-        String equipo2;
-        int goles1;
-        int goles2;
+    void writeCSV(String file, String equipo1, String equipo2, Integer goles1, Integer goles2, Integer idEquipo1, Integer idEquipo2){
         try {
 
             FileWriter fileWriter = new FileWriter(file, true);
@@ -19,20 +14,7 @@ public class CSVManage {
 
             printWriter.println("id;nombre1;goles1;goles2;nombre2;");
 
-            System.out.println("nombre del equipo 1");
-            equipo1 = dato.nextLine();
-
-            System.out.println("numero de goles equipo 1");
-            goles1 = dato.nextInt();
-
-            System.out.println("nombre del equipo 2");
-            equipo2 = dato.nextLine();
-            equipo2 = dato.nextLine();
-
-            System.out.println("numero de goles equipo 2");
-            goles2 = dato.nextInt();
-
-            printWriter.println(  "1;" + equipo1 + ";" + goles1 + ";" + goles2 + ";" + equipo2 +  ";2");
+            printWriter.println(  idEquipo1 + ";" + equipo1 + ";" + goles1 + ";" + goles2 + ";" + equipo2 +  ";" + idEquipo2);
 
             printWriter.flush();
             printWriter.close();

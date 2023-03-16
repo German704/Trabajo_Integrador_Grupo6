@@ -1,21 +1,33 @@
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.Scanner;
 
 public class Main{
     public static void main(String[] arg) throws IOException {
-        //equipos();
 
-        //Funcion para main
         CSVManage csvManage = new CSVManage();
 
-
-        csvManage.writeCSV("file.csv");
-
-
+        Partido partido1 = partido()[0];
         //csvManage.readFileCsv("primeros_dos_partidos.csv");
-        csvManage.readFileCsv("file.csv");
+
+        //Creamos el archivo csv y le pasamos los datos;
+
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Escriba el nombre del archivo");
+        String fileName = scanner.nextLine();
+
+        if (!Files.exists(Paths.get(fileName))){
+            csvManage.writeCSV(fileName, partido1.getNombreEquipo(1), partido1.getNombreEquipo(2), partido1.getGoles_equipo1(), partido1.getGoles_equipo2(), partido1.getEquipoId(1), partido1.getEquipoId(2));
+        }
+        csvManage.readFileCsv(fileName);
+
 
     }
-    public static void equipos(){
+    public static Partido[] partido(){
+
         Equipo argentina = new Equipo(
                 1,
                 "Argentina",
@@ -40,28 +52,21 @@ public class Main{
                 "Seleccionado"
         );
 
-        /* argentina.getData();
-        arabiaS.getData();
-        polonia.getData();
-        mexico.getData(); */
-
         Partido partido1 = new Partido(
                 1,
-                argentina.id,
-                arabiaS.id,
+                argentina,
+                arabiaS,
                 1,
                 2
-                );
+        );
         Partido partido2 = new Partido(
                 2,
-                polonia.id,
-                mexico.id,
+                polonia,
+                mexico,
                 0,
                 0
         );
 
-        //partido1.getData();
-        //partido2.getData();
 
         Pronostico mariana = new Pronostico(
                 1,
@@ -72,6 +77,12 @@ public class Main{
                 + 1
         );
 
-        mariana.getData();
+
+        Partido[] partidos = new Partido[2];
+        partidos[0] = partido1;
+        partidos[1] = partido2;
+
+        return partidos;
     }
+
 }

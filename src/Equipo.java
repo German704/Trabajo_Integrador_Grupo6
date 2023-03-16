@@ -8,19 +8,14 @@ public class Equipo {
     private String nombre;
     private String descripcion;
 
-    public String getData(){
-        String equipoInfo = "Equipo: " + id +
-                "\nNombre: " + nombre +
-                "\nDescripcion: " + descripcion +
-                "\n-------------------------------";
-
-        System.out.println(equipoInfo);
-        return equipoInfo;
+    public String getNombre(){
+        return nombre;
     }
-    public String id(){
-        String NroEquipo = "" + id;
-        System.out.println(NroEquipo);
-        return NroEquipo;
+    public String getDescripcion(){
+        return descripcion;
+    }
+    public Integer id(){
+        return id;
     }
 
 }
