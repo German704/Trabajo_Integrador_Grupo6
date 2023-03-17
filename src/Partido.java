@@ -47,5 +47,9 @@ public class Partido {
         System.out.println(info);
         return info;
     }
-
+    public String id(){
+        String NroPartido = "" + id;
+        System.out.println(NroPartido);
+        return NroPartido;
+    }
 }

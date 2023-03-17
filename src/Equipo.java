@@ -17,5 +17,10 @@ public class Equipo {
         System.out.println(equipoInfo);
         return equipoInfo;
     }
+    public String id(){
+        String NroEquipo = "" + id;
+        System.out.println(NroEquipo);
+        return NroEquipo;
+    }
 
 }

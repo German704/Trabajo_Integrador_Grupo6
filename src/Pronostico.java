@@ -27,7 +27,7 @@ public class Pronostico {
         String info = "Pronostico: " + id +
                 "\nDe: " + nombre +
                 "\nEquipo: " + equipo +
-                "\nPartido: " + partido +
+                "\nPartido: " + partido.id() +
                 "\nResultado: " + resultado +
                 "\nPuntos_Obtenidos: " + this.puntos() +
                 "\n-------------------------------";
@@ -35,4 +35,7 @@ public class Pronostico {
         System.out.println(info);
         return info;
     }
+
+
+
 }
