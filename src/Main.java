@@ -1,7 +1,18 @@
-public class Main{
-    public static void main(String[] arg){
+import java.io.IOException;
 
-        equipos();
+public class Main{
+    public static void main(String[] arg) throws IOException {
+        //equipos();
+
+        //Funcion para main
+        CSVManage csvManage = new CSVManage();
+
+
+        csvManage.writeCSV("file.csv");
+
+
+        //csvManage.readFileCsv("primeros_dos_partidos.csv");
+        csvManage.readFileCsv("file.csv");
 
     }
     public static void equipos(){
